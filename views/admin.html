@@ -1,0 +1,43 @@
+<div id="admin">
+	<form method="post" action="/admin">
+			<ul>
+			<li>
+				<label for="suspect">Suspect:</label>
+				<select name="suspect" id="suspect">
+					{{each suspects}}
+						{{if $value == currentSuspect}}
+							<option value="${$value}" selected>${$value}</option>
+						{{else}}
+							<option value="${$value}">${$value}</option>
+						{{/if}}
+					{{/each}}
+				</select>
+			</li>
+			<li>
+				<label for="place">Place:</label>
+				<select name="place" id="place">
+					{{each places}}
+						{{if $value == currentPlace}}
+							<option value="${$value}" selected>${$value}</option>
+						{{else}}
+							<option value="${$value}">${$value}</option>
+						{{/if}}
+					{{/each}}
+				</select>
+			</li>
+			<li>
+				<label for="weapons">Weapons:</label>
+				<select name="weapon" id="weapon">
+					{{each weapons}}
+						{{if $value == currentWeapon}}
+							<option value="${$value}" selected>${$value}</option>
+						{{else}}
+							<option value="${$value}">${$value}</option>
+						{{/if}}
+					{{/each}}
+				</select>
+			</li>
+		</ul>
+		<button type="submit" id="saveAnswer">Save answer</button>
+	</form>
+</div>

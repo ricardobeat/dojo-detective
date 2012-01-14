@@ -1,0 +1,70 @@
+<nav id="nav">
+	<ul>
+		<li><a class="active" href="#guess">Guess</a></li>
+		<li><a href="#register">Add data</a></li>
+	</ul>
+</nav>
+<section id="register" class="content">
+	<h2>Register new information</h2>
+	<section id="suspects" class="editable-list">
+		<h3>Suspects</h3>
+		<ul>
+		{{each suspects}}
+			<li data-value="${$value}">${$value} <button class="delete" title="Delete">X</button></li>
+		{{/each}}
+		</ul>
+		<button id="addSuspect" class="add">Add suspect</button>
+	</section>
+
+	<section id="places" class="editable-list">
+		<h3>Places</h3>
+		<ul>
+		{{each places}}
+			<li data-value="${$value}">${$value} <button class="delete" title="Delete">X</button></li>
+		{{/each}}
+		</ul>
+		<button id="addPlace" class="add">Add place</button>
+	</section>
+
+	<section id="weapons" class="editable-list">
+		<h3>Weapons</h3>
+		<ul>
+		{{each weapons}}
+			<li data-value="${$value}">${$value} <button class="delete" title="Delete">X</button></li>
+		{{/each}}
+		</ul>
+		<button id="addWeapon" class="add">Add weapon</button>
+	</section>
+</section>
+
+<section id="guess" class="content">
+	<h2>Attempt a guess</h2>
+	<ul>
+		<li>
+			<label for="suspect">Suspect:</label>
+			<select name="suspect" id="suspect">
+				{{each suspects}}
+				<option value="${$value}">${$value}</option>
+				{{/each}}
+			</select>
+		</li>
+		<li>
+			<label for="place">Place:</label>
+			<select name="place" id="place">
+				{{each places}}
+				<option value="${$value}">${$value}</option>
+				{{/each}}
+			</select>
+		</li>
+		<li>
+			<label for="weapons">Weapons:</label>
+			<select name="weapon" id="weapon">
+				{{each weapons}}
+				<option value="${$value}">${$value}</option>
+				{{/each}}
+			</select>
+		</li>
+	</ul>
+	<button id="sendGuess">Is this right?</button>
+	<p id="result"></p>
+</section>
